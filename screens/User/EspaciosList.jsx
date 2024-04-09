@@ -1,12 +1,92 @@
-import { View, Text, StyleSheet, TextInputBase, Modal } from 'react-native'
+import { View, Text, StyleSheet, TextInputBase, Modal, Alert } from 'react-native'
 import React, { useState } from 'react'
+import { Button} from '@rneui/base'
 
 const EspaciosList = ({ spacesForRent }) => {
 
+    const [estatus, setEstatus] = useState(spacesForRent.estatus);
+    
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const [modalView, setModalView] = useState(false)
+
+    const handleSpacePress = () => {
+        setModalView(true)
+    }
+
+    const handleCancelPress = () => {
+        setEstatus('Libre')
+        setModalView(false)
+    }
+    
+    const acceptAlert = () => {
+        Alert.alert('¡Felicidades!, espacio rentado',
+          'Se ha enviado una confirmación a tu correo',
+          [
+            { text: 'Aceptar', onPress: () => { setModalVisible(false), setModalView(false), setEstatus('Ocupado') } }
+          ]);
+      }
+
     return (
         <View style={styles.card}>
-            
-            
+            <View style={{ flex: 1, flexDirection: 'row', padding: 10 }}>
+                <View style={{ flex: 1 }}>
+                    <Text style={{ marginTop: 10 }} />
+                    <Text style={styles.texto}>Espacio: {spacesForRent.title}</Text>
+                    <Text style={styles.texto}>Sillas: {spacesForRent.sillas}</Text>
+                    <Text style={styles.texto}>Mesas: {spacesForRent.mesas}</Text>
+                    <Text style={styles.texto}></Text>
+                    <Button title='Rentar espacio' buttonStyle={{ width: 150, height: 40, backgroundColor: '#00b4d8', borderRadius: 5 }}
+                        onPress={handleSpacePress} />
+                </View>
+                <View><Text style={{ fontSize: 20, fontWeight: '500' }}>Información...</Text></View>
+                <View style={{ flex: 1 }}>
+                    <Text style={{ marginTop: 10 }} />
+                    <Text style={styles.texto}>Tamaño: {spacesForRent.tamaño}</Text>
+                    <Text style={styles.texto}>Tamaño: {spacesForRent.medidas}</Text>
+                    <Text style={styles.texto}>Estatus: {estatus}</Text>
+                </View>
+            </View>
+
+            {/*Primer Modal */}
+            <Modal animationType='slide' transparent={true} visible={modalView}>
+                <View style={styles.ModalView}>
+                    <View style={styles.modalContainer}>
+                        <View style={{ backgroundColor: '#00b3b3' }}>
+                            <Text style={styles.modalTitle}>Renta del espacio</Text>
+                        </View>
+                        <View style={{ flexDirection: 'row', padding:2 }}>
+                            <View style={{ flex: 1 }}>
+                                <View>
+                                <Text style={{ marginTop: 10 }} />
+                                <Text style={styles.texto}>Espacio: {spacesForRent.title}</Text>
+                                <Text style={styles.texto}>Sillas: {spacesForRent.sillas}</Text>
+                                <Text style={styles.texto}>Mesas: {spacesForRent.mesas}</Text>
+                                <Text style={styles.texto}></Text>
+                                </View>
+                                
+                                <Button title='Cancelar' buttonStyle={{ width: 100, height: 40, backgroundColor: 'red', borderRadius: 5 }}
+                                    onPress={handleCancelPress} />
+                                
+                                
+                            </View>
+                            <View><Text style={{ fontSize: 20, fontWeight: '500' }}>Servicios Extra</Text></View>
+                            <View style={{ flex: 1 }}>
+                                <View>
+                                <Text style={{ marginTop: 10 }} />
+                                <Text style={styles.texto}>Tamaño: {spacesForRent.tamaño}</Text>
+                                <Text style={styles.texto}>Tamaño: {spacesForRent.medidas}</Text>
+                                <Text style={styles.texto}>Estatus: {estatus}</Text>
+                                <Text style={styles.texto}></Text>
+                                </View>
+                                
+                                <Button title='Rentar' buttonStyle={{ width: 100, height: 40, backgroundColor: 'green', borderRadius: 5 }}
+                                    onPress={acceptAlert} />
+                            </View>
+                        </View>
+                    </View>
+                </View>
+            </Modal>
         </View>
     )
 }
@@ -17,7 +97,7 @@ const styles = StyleSheet.create({
     card: {
         backgroundColor: '#F0EDE2',
         position: 'absolute',
-        bottom: 136,
+        bottom: 5,
         right: 10,
         left: 10,
         flexDirection: 'row',
