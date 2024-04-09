@@ -21,6 +21,7 @@ Renta = () => {
     }
     const regionChange = (coordinates) => {
         console.log("Nuevas coordenadas: ", coordinates)
+        console.log("Prueba 1")
       }
     return (
         <View style={{ marginTop: 35 }}>
