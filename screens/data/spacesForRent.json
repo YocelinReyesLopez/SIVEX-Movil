@@ -1,0 +1,112 @@
+[
+    {
+        "id":1,
+        "title":"Biblioteca",
+        "latitude":18.8506079563556, 
+        "longitude":-99.2008666488588,
+        "tamaño": "Chico",
+        "medidas":"2x2",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":2,
+        "title":"Cafetería Balcón",
+        "latitude":18.850355263823197,
+        "longitude":-99.20045426082453,
+        "tamaño": "Grande",
+        "medidas":"4x4",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":3,
+        "title":"Cafetería Balcón 2",
+        "latitude":18.85051249477575,
+        "longitude":-99.2003059198036,
+        "tamaño": "Mediano",
+        "medidas":"3x2",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":4,
+        "title":"Explanada 1",
+        "latitude":18.851467108125423,
+        "longitude":-99.20039492442302,
+        "tamaño": "Grande",
+        "medidas":"4x4",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":5,
+        "title":"Explanada 2",
+        "latitude":18.851453069733363,
+        "longitude":-99.20018131335289,
+        "tamaño": "Grande",
+        "medidas":"4x4",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":6,
+        "title":"Taller 1",
+        "latitude":18.850883110023965,
+        "longitude":-99.20019614745497,
+        "tamaño": "Mediano",
+        "medidas":"3x2",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":7,
+        "title":"Michoacana",
+        "latitude":18.85113182464772,
+        "longitude":-99.200227421524,
+        "tamaño": "Chico",
+        "medidas":"2x2",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":8,
+        "title":"Docencia 4",
+        "latitude":18.852416341997,
+        "longitude":-99.20038379747766,
+        "tamaño": "Mediano",
+        "medidas":"3x3",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":9,
+        "title":"Docencia 1",
+        "latitude":18.85129820868856,
+        "longitude":-99.20108153063235,
+        "tamaño": "Chico",
+        "medidas":"2x2",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    },
+    {
+        "id":10,
+        "title":"Cafetería Nido",
+        "latitude":18.851201484005593,
+        "longitude":-99.20109788375333,
+        "tamaño": "Mediano",
+        "medidas":"3x3",
+        "sillas":2,
+        "mesas":1,
+        "estatus":"Libre"
+    }
+]
